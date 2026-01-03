@@ -1,0 +1,14 @@
+obj/
+*.o
+
+*.exe
+*.dll
+
+myfs
+myfs.exe
+*.dump
+
+.vscode/
+
+.DS_Store
+Thumbs.db
