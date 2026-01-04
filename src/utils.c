@@ -8,17 +8,16 @@
 #endif
 
 // 建立 Host 電腦上的目錄
-// 因為 Windows 和 Linux/Mac 的 mkdir 參數不同，這裡做相容處理
+// 因為 Windows 和 Linux/Mac 的 mkdir 參數不同
 void create_host_dir(const char *path) 
 {
     struct stat st = {0};
-    // 檢查目錄是否存在
     if (stat(path, &st) == -1) 
     {
         #ifdef _WIN32
-            _mkdir(path); // Windows 版
+            _mkdir(path); // Windows
         #else
-            mkdir(path, 0700); // Linux/Mac 版
+            mkdir(path, 0700); // Linux
         #endif
     }
 }
